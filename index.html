@@ -68,14 +68,10 @@
                 success: function(res) {
                     $("#resultsdiv").html("Ciao, " + res.firstname + " " + res.lastname);
                     console.dir(res.fullname);
+					alert('Your comment was successfully added');
                 },
                 error: function(e) {
-                    navigator.notification.alert(
-    'Connessione assente!',  // message
-    alertDismissed,         // callback
-    'Errore invio',            // title
-    'riprova'                  // buttonName
-);
+                    alert('There was an error adding your comment');
 
                 },
                 complete: function(data) {
