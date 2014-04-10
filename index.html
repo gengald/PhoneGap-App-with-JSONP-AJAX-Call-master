@@ -66,11 +66,17 @@
                 data: {first: $("#firstname").val(), last: $("#lastname").val() },
                 crossDomain: true,
                 success: function(res) {
-                    $("#resultsdiv").html("Hello, " + res.firstname + " " + res.lastname);
+                    $("#resultsdiv").html("Ciao, " + res.firstname + " " + res.lastname);
                     console.dir(res.fullname);
                 },
                 error: function(e) {
-                    console.log(e.message);
+                    navigator.notification.alert(
+    'Connessione assente!',  // message
+    alertDismissed,         // callback
+    'Errore invio',            // title
+    'riprova'                  // buttonName
+);
+
                 },
                 complete: function(data) {
                     console.log(e.message);
